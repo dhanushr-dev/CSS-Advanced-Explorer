@@ -1,0 +1,1937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+        content="CSS Advanced Explorer — a complete educational resource for learning advanced CSS3: pseudo-classes, pseudo-elements, variables, functions, media queries, modern features, selectors, architecture, accessibility, performance and pure-CSS projects." />
+  <meta name="author" content="CSS Advanced Explorer" />
+  <title>CSS Advanced Explorer — Master Modern CSS3</title>
+
+  <!-- Single stylesheet: this site uses ONLY HTML5 + CSS3 -->
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <!-- =================================================================
+       SKIP LINK — accessibility (Section 9)
+       ================================================================= -->
+  <a class="visually-hidden-focusable" href="#main"
+     style="position:absolute;left:-9999px;top:0;background:#fff;padding:1rem;">
+     Skip to main content
+  </a>
+
+  <!-- Hidden checkbox for the CSS-only mobile sidebar toggle (Section 12) -->
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" />
+
+  <div class="page">
+
+    <!-- =================================================================
+         HEADER + NAVIGATION (sticky)
+         ================================================================= -->
+    <header class="header page__header">
+      <label class="nav-toggle__label" for="nav-toggle" title="Toggle navigation">
+        ☰
+      </label>
+
+      <a class="brand" href="#top" aria-label="CSS Advanced Explorer home">
+        <span class="brand__mark">{ }</span>
+        <span>
+          CSS Advanced Explorer
+          <small>Modern CSS3, mastered</small>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#home">Home</a></li>
+          <li><a class="nav__link" href="#toc">Contents</a></li>
+          <li><a class="nav__link" href="#sec-projects">Projects</a></li>
+          <li><a class="nav__link" href="#sec-challenges">Challenges</a></li>
+        </ul>
+      </nav>
+
+      <span class="header__search" title="Search coming soon">
+        ⌕ <span>Quick reference…</span>
+      </span>
+    </header>
+
+    <!-- =================================================================
+         SIDEBAR — sticky in-page navigation
+         ================================================================= -->
+    <aside class="sidebar page__sidebar" aria-label="Table of contents">
+      <p class="sidebar__title">On this page</p>
+      <nav class="sidebar__nav" aria-label="Sections">
+        <ol>
+          <li><a class="sidebar__link" href="#sec-pseudo-classes">Pseudo-classes</a></li>
+          <li><a class="sidebar__link" href="#sec-pseudo-elements">Pseudo-elements</a></li>
+          <li><a class="sidebar__link" href="#sec-variables">CSS Variables</a></li>
+          <li><a class="sidebar__link" href="#sec-functions">CSS Functions</a></li>
+          <li><a class="sidebar__link" href="#sec-media-queries">Media Queries</a></li>
+          <li><a class="sidebar__link" href="#sec-modern">Modern CSS</a></li>
+          <li><a class="sidebar__link" href="#sec-selectors">Advanced Selectors</a></li>
+          <li><a class="sidebar__link" href="#sec-architecture">Architecture</a></li>
+          <li><a class="sidebar__link" href="#sec-accessibility">Accessibility</a></li>
+          <li><a class="sidebar__link" href="#sec-performance">Performance</a></li>
+          <li><a class="sidebar__link" href="#sec-best-practices">Best Practices</a></li>
+          <li><a class="sidebar__link" href="#sec-projects">Mini Projects</a></li>
+          <li><a class="sidebar__link" href="#sec-challenges">Practice Challenges</a></li>
+        </ol>
+      </nav>
+    </aside>
+
+    <!-- =================================================================
+         MAIN CONTENT
+         ================================================================= -->
+    <main class="page__main" id="main">
+
+      <span id="top"></span>
+
+      <!-- ==============================================================
+           HERO SECTION
+           ============================================================== -->
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero__inner">
+          <span class="hero__eyebrow">★ Interactive CSS Course · 100% HTML &amp; CSS</span>
+          <h1 class="hero__title" id="hero-title">
+            Master <span class="grad">Advanced CSS</span><br />
+            one property at a time.
+          </h1>
+          <p class="hero__lead">
+            A complete, modern documentation-style course covering every advanced
+            CSS3 feature — pseudo-classes, pseudo-elements, custom properties,
+            functions, media queries, modern layout, architecture, accessibility,
+            performance and twelve pure-CSS projects. No frameworks. No JavaScript.
+            Just clean, semantic HTML5 and CSS3.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#sec-pseudo-classes">Start learning →</a>
+            <a class="btn btn--ghost" href="#sec-projects">Browse projects</a>
+          </div>
+
+          <dl class="hero__stats">
+            <div class="hero__stat">
+              <strong>13</strong><span>Deep-dive sections</span>
+            </div>
+            <div class="hero__stat">
+              <strong>80+</strong><span>CSS concepts explained</span>
+            </div>
+            <div class="hero__stat">
+              <strong>12</strong><span>Pure-CSS mini projects</span>
+            </div>
+            <div class="hero__stat">
+              <strong>0</strong><span>Lines of JavaScript</span>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ==============================================================
+           INTRODUCTION
+           ============================================================== -->
+      <div class="content flow" style="padding-top: var(--space-7);">
+
+        <section aria-labelledby="intro-title">
+          <h2 id="intro-title">Introduction</h2>
+          <p>
+            CSS has grown from a simple styling language into a powerful, declarative
+            system for building entire interfaces. Modern CSS can produce responsive
+            layouts, interactive components, smooth animations, design systems,
+            accessible experiences and even some logic — all without a single line
+            of JavaScript. This guide takes you from the fundamentals of
+            pseudo-selectors through to production-grade architecture.
+          </p>
+          <p>
+            Each concept is presented in a consistent lesson card with the same
+            structure: a definition, the official syntax, accepted values, a plain
+            explanation, a <strong>live demonstration</strong> you can interact with,
+            the exact HTML and CSS that produced it, browser-support notes,
+            best practices, common mistakes and real-world use cases.
+          </p>
+        </section>
+
+        <!-- Why Advanced CSS Matters -->
+        <section aria-labelledby="why-title">
+          <h2 id="why-title">Why Advanced CSS Matters</h2>
+          <div class="grid grid--3">
+            <article class="feature">
+              <div class="feature__icon">⚡</div>
+              <h4>Performance</h4>
+              <p>A selector or property written well can shave milliseconds off every paint. Efficient CSS keeps animations at 60 fps and pages fast on mobile.</p>
+            </article>
+            <article class="feature">
+              <div class="feature__icon">🎨</div>
+              <h4>Design systems</h4>
+              <p>Custom properties, naming conventions and component patterns let you build scalable, themeable design systems that grow with your product.</p>
+            </article>
+            <article class="feature">
+              <div class="feature__icon">♿</div>
+              <h4>Accessibility</h4>
+              <p>Focus styles, reduced-motion support, color contrast and keyboard navigation are first-class concerns — not afterthoughts.</p>
+            </article>
+            <article class="feature">
+              <div class="feature__icon">📱</div>
+              <h4>Responsiveness</h4>
+              <p>Media queries, fluid functions like <code>clamp()</code> and modern layout modules make interfaces adapt to any screen gracefully.</p>
+            </article>
+            <article class="feature">
+              <div class="feature__icon">🔧</div>
+              <h4>Maintainability</h4>
+              <p>BEM, utility classes and CSS variables eliminate the dreaded specificity wars and make large stylesheets a joy to maintain.</p>
+            </article>
+            <article class="feature">
+              <div class="feature__icon">🚀</div>
+              <h4>Less JavaScript</h4>
+              <p>Tabs, accordions, tooltips, dropdowns and themes are achievable in pure CSS — fewer dependencies, smaller bundles, faster sites.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Learning Objectives -->
+        <section aria-labelledby="objectives-title">
+          <h2 id="objectives-title">Learning Objectives</h2>
+          <p>By the end of this guide you will be able to:</p>
+          <ul class="demo-marker" style="padding-left: var(--space-5);">
+            <li>Select any element precisely using pseudo-classes, pseudo-elements and combinators.</li>
+            <li>Build a token-based design system with CSS custom properties and <code>var()</code>.</li>
+            <li>Use functional CSS — <code>calc()</code>, <code>min()</code>, <code>max()</code>, <code>clamp()</code> — for fluid, responsive UI.</li>
+            <li>Adapt layouts with media queries, dark mode, print and accessibility-aware features.</li>
+            <li>Apply modern properties such as <code>aspect-ratio</code>, <code>mask</code>, <code>:has()</code> and blend modes confidently.</li>
+            <li>Structure large CSS codebases with resets, BEM and utility-first patterns.</li>
+            <li>Ship accessible, performant interfaces that respect user preferences.</li>
+            <li>Build twelve real interface components entirely in HTML + CSS.</li>
+          </ul>
+        </section>
+
+        <!-- Table of Contents -->
+        <section aria-labelledby="toc" id="toc">
+          <h2 id="toc">Table of Contents</h2>
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr><th>#</th><th>Section</th><th>Focus</th><th>Key topics</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>01</td><td><a href="#sec-pseudo-classes">Pseudo-classes</a></td><td>State &amp; structure</td><td><code>:hover</code>, <code>:focus</code>, <code>:nth-child</code>, <code>:has()</code></td></tr>
+                <tr><td>02</td><td><a href="#sec-pseudo-elements">Pseudo-elements</a></td><td>Generated content</td><td><code>::before</code>, <code>::after</code>, <code>::marker</code></td></tr>
+                <tr><td>03</td><td><a href="#sec-variables">CSS Variables</a></td><td>Design tokens</td><td><code>--x</code>, <code>var()</code>, theming</td></tr>
+                <tr><td>04</td><td><a href="#sec-functions">CSS Functions</a></td><td>Computed values</td><td><code>calc()</code>, <code>clamp()</code>, <code>attr()</code></td></tr>
+                <tr><td>05</td><td><a href="#sec-media-queries">Media Queries</a></td><td>Responsive design</td><td><code>@media</code>, dark mode, print</td></tr>
+                <tr><td>06</td><td><a href="#sec-modern">Modern CSS</a></td><td>New properties</td><td><code>aspect-ratio</code>, <code>mask</code>, blend modes</td></tr>
+                <tr><td>07</td><td><a href="#sec-selectors">Advanced Selectors</a></td><td>Targeting elements</td><td>Attribute selectors, combinators</td></tr>
+                <tr><td>08</td><td><a href="#sec-architecture">Architecture</a></td><td>Code organization</td><td>Reset, BEM, utilities</td></tr>
+                <tr><td>09</td><td><a href="#sec-accessibility">Accessibility</a></td><td>Inclusive design</td><td>Focus, contrast, motion</td></tr>
+                <tr><td>10</td><td><a href="#sec-performance">Performance</a></td><td>Speed</td><td>Repaints, reflows, animations</td></tr>
+                <tr><td>11</td><td><a href="#sec-best-practices">Best Practices</a></td><td>Quality</td><td>Naming, maintainability</td></tr>
+                <tr><td>12</td><td><a href="#sec-projects">Mini Projects</a></td><td>Applied builds</td><td>Tabs, accordion, gallery, cards</td></tr>
+                <tr><td>13</td><td><a href="#sec-challenges">Practice Challenges</a></td><td>Hands-on</td><td>Problems with full solutions</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+
+      <!-- =================================================================
+           SECTION 1 — PSEUDO-CLASSES
+           ================================================================= -->
+      <section class="section" id="sec-pseudo-classes" aria-labelledby="sec-pseudo-classes-title">
+        <div class="content">
+          <header class="section__head">
+            <span class="section__num">SECTION 01</span>
+            <h2 class="section__title" id="sec-pseudo-classes-title">Pseudo-classes</h2>
+            <p class="section__desc">
+              A pseudo-class is a keyword added to a selector that specifies a
+              special <em>state</em> of the selected element — for example
+              <code>:hover</code> when a pointer is over it, or
+              <code>:nth-child()</code> based on its position. They let you style
+              dynamic states and document structure without extra markup.
+            </p>
+          </header>
+
+          <!-- :hover -->
+          <article class="lesson">
+            <header class="lesson__head">
+              <h3 class="lesson__title">:hover</h3>
+              <div class="lesson__badges">
+                <span class="badge badge--success">Stable</span>
+                <span class="badge">Interactive</span>
+              </div>
+            </header>
+            <div class="lesson__body">
+              <div>
+                <p class="lesson__block-title">Definition</p>
+                <p class="lesson__definition">
+                  Matches an element while the user pointers over it with a
+                  pointing device (mouse, trackpad, pen).
+                </p>
+              </div>
+              <div>
+                <p class="lesson__block-title">Syntax &amp; Values</p>
+                <pre class="code"><span class="c-sel">selector</span>:hover { <span class="c-prop">/* styles */</span> }</pre>
+              </div>
+              <div>
+                <p class="lesson__block-title">Live demonstration</p>
+                <div class="demo">
+                  <a class="demo-hover" href="#sec-pseudo-classes">Hover &amp; click me</a>
+                  <span class="demo__note">Move the pointer over the button — then press &amp; hold to see <code>:active</code>.</span>
+                </div>
+              </div>
+              <div class="grid grid--2">
+                <div>
+                  <p class="lesson__block-title">HTML</p>
+                  <pre class="code"><span class="c-tag">&lt;a</span> <span class="c-attr">class</span>=<span class="c-str">"demo-hover"</span> <span class="c-attr">href</span>=<span class="c-str">"#"</span><span class="c-tag">&gt;</span>Hover &amp; click me<span class="c-tag">&lt;/a&gt;</span></pre>
+                </div>
+                <div>
+                  <p class="lesson__block-title">CSS</p>
+                  <pre class="code"><span class="c-sel">.demo-hover</span> {
+  <span class="c-prop">background</span>: <span class="c-val">var(--color-primary)</span>;
+  <span class="c-prop">transition</span>: <span class="c-val">all 220ms ease</span>;
+}
+<span class="c-sel">.demo-hover:hover</span> {
+  <span class="c-prop">background</span>: <span class="c-val">var(--color-primary-700)</span>;
+  <span class="c-prop">transform</span>: <span class="c-val">translateY(-3px) scale(1.04)</span>;
+}
+<span class="c-sel">.demo-hover:active</span> {
+  <span class="c-prop">transform</span>: <span class="c-val">translateY(0) scale(0.97)</span>;
+}</pre>
+                </div>
+              </div>
+              <div>
+                <p class="lesson__block-title">Browser support</p>
+                <div class="support">
+                  <span class="support__item">Chrome ✅</span>
+                  <span class="support__item">Firefox ✅</span>
+                  <span class="support__item">Safari ✅</span>
+                  <span class="support__item">Edge ✅</span>
+                </div>
+              </div>
+              <div class="grid grid--2">
+                <div class="callout callout--tip">
+                  <span class="callout__icon">✅</span>
+                  <div>
+                    <p class="callout__title">Best practice</p>
+                    Pair <code>:hover</code> with a <code>transition</code> so state
+                    changes feel smooth, not jarring.
+                  </div>
+                </div>
+                <div class="callout callout--danger">
+                  <span class="callout__icon">⚠️</span>
+                  <div>
+                    <p class="callout__title">Common mistake</p>
+                    Hiding content only on <code>:hover</code> — touch devices have
+                    no hover. Always provide a tap fallback.
+                  </div>
+                </div>
+              </div>
+              <div>
+                <p class="lesson__block-title">Real-world use cases</p>
+                <p class="lesson__prose">Buttons, navigation links, card lifts, dropdown menus, tooltips, image zoom effects, table-row highlighting, and anywhere a user can pause a pointer.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- :active -->
+          <article class="lesson">
+            <header class="lesson__head">
+              <h3 class="lesson__title">:active</h3>
+              <div class="lesson__badges"><span class="badge badge--success">Stable</span></div>
+            </header>
+            <div class="lesson__body">
+              <div>
+                <p class="lesson__block-title">Definition</p>
+                <p class="lesson__definition">Matches an element <em>while it is being activated</em> — typically while the mouse button is held down, or a key like Enter is pressed on a focused control.</p>
+              </div>
+              <div>
+                <p class="lesson__block-title">Syntax</p>
+                <pre class="code"><span class="c-sel">selector</span>:active { <span class="c-prop">/* styles while pressed */</span> }</pre>
+              </div>
+              <div>
+                <p class="lesson__block-title">Live demonstration</p>
+                <div class="demo">
+                  <button class="demo-hover" type="button">Press and hold</button>
+                  <span class="demo__note">Hold the mouse button down (or press Space/Enter while focused) to see the active state.</span>
+                </div>
+              </div>
+              <div class="grid grid--2">
+                <div><p class="lesson__block-title">HTML</p><pre class="code"><span class="c-tag">&lt;button&gt;</span>Press and hold<span class="c-tag">&lt;/button&gt;</span></pre></div>
+                <div><p class="lesson__block-title">CSS</p><pre class="code"><span class="c-sel">button:active</span> {
+  <span class="c-prop">transform</span>: <span class="c-val">scale(0.95)</span>;
+  <span class="c-prop">background</span>: <span class="c-val">var(--color-primary-700)</span>;
+}</pre></div>
+              </div>
+              <div>
+                <p class="lesson__block-title">Browser support</p>
+                <div class="support"><span class="support__item">All browsers ✅</span></div>
+              </div>
+              <div class="grid grid--2">
+                <div class="callout callout--tip"><span class="callout__icon">✅</span><div><p class="callout__title">Best practice</p>Keep active feedback short (100–200ms) so it feels like a tactile press.</div></div>
+                <div class="callout callout--danger"><span class="callout__icon">⚠️</span><div><p class="callout__title">Common mistake</p>Forgetting the LVHA order: <code>:link :visited :hover :active</code>. Out of order, one state overrides another.</div></div>
+              </div>
+              <div><p class="lesson__block-title">Use cases</p><p class="lesson__prose">Tactile button presses, drag handles, press feedback, and indicating that an action has been received.</p></div>
+            </div>
+          </article>
+
+          <!-- :focus & :focus-visible & :focus-within -->
+          <article class="lesson">
+            <header class="lesson__head">
+              <h3 class="lesson__title">:focus · :focus-visible · :focus-within</h3>
+              <div class="lesson__badges"><span class="badge badge--success">Stable</span><span class="badge badge--primary">Accessibility</span></div>
+            </header>
+            <div class="lesson__body">
+              <div>
+                <p class="lesson__block-title">Definitions</p>
+                <dl class="defs">
+                  <dt><code>:focus</code></dt><dd>Matches while the element has focus — keyboard <em>or</em> mouse.</dd>
+                  <dt><code>:focus-visible</code></dt><dd>Matches only when the browser heuristically decides focus should be visible (usually keyboard). Avoids the ugly outline on mouse clicks.</dd>
+                  <dt><code>:focus-within</code></dt><dd>Matches a parent when <em>any</em> descendant is focused — perfect for highlighting a whole form field group.</dd>
+                </dl>
+              </div>
+              <div>
+                <p class="lesson__block-title">Syntax</p>
+                <pre class="code"><span class="c-sel">input:focus-visible</span> {
+  <span class="c-prop">outline</span>: <span class="c-val">none</span>;
+  <span class="c-prop">box-shadow</span>: <span class="c-val">0 0 0 4px var(--color-primary-soft)</span>;
+  <span class="c-prop">border-color</span>: <span class="c-val">var(--color-primary)</span>;
+}
+<span class="c-sel">.field:focus-within</span> { <span class="c-prop">background</span>: <span class="c-val">var(--color-primary-soft)</span>; }</pre>
+              </div>
+              <div>
+                <p class="lesson__block-title">Live demonstration</p>
+                <div class="demo demo--col">
+                  <input class="demo-focus" type="text" placeholder="Click, then Tab to me" />
+                  <p class="demo__note">Click with the mouse — no ring. Press <kbd>Tab</kbd> from the keyboard — the ring appears because <code>:focus-visible</code> only shows for keyboard users.</p>
+                </div>
+              </div>
+              <div class="grid grid--2">
+                <div><p class="lesson__block-title">HTML</p><pre class="code"><span class="c-tag">&lt;input</span> <span class="c-attr">class</span>=<span class="c-str">"demo-focus"</span> <span class="c-attr">type</span>=<span class="c-str">"text"</span> <span class="c-tag">/&gt;</span></pre></div>
+                <div><p class="lesson__block-title">CSS</p><pre class="code"><span class="c-sel">.demo-focus:focus-visible</span> {
+  <span class="c-prop">outline</span>: <span class="c-val">none</span>;
+  <span class="c-prop">border-color</span>: <span class="c-val">var(--color-primary)</span>;
+  <span class="c-prop">box-shadow</span>: <span class="c-val">0 0 0 4px var(--color-primary-soft)</span>;
+}</pre></div>
+              </div>
+              <div><p class="lesson__block-title">Browser support</p><div class="support"><span class="support__item">:focus — all</span><span class="support__item">:focus-visible — 2019+</span><span class="support__item">:focus-within — 2018+</span></div></div>
+              <div class="grid grid--2">
+                <div class="callout callout--tip"><span class="callout__icon">✅</span><div><p class="callout__title">Best practice</p>Prefer <code>:focus-visible</code> over <code>:focus</code>. Never use <code>outline: none</code> without providing a replacement ring.</p></div></div>
+                <div class="callout callout--danger"><span class="callout__icon">⚠️</span><div><p class="callout__title">Common mistake</p>Removing the outline globally — this fails WCAG 2.4.7 (Focus Visible).</p></div></div>
+              </div>
+              <div><p class="lesson__block-title">Use cases</p><p class="lesson__prose">Keyboard accessibility, form-field highlighting, focus traps in modals, and styling interactive elements without annoying mouse users.</p></div>
+            </div>
+          </article>
+
+          <!-- :link / :visited -->
+          <article class="lesson">
+            <header class="lesson__head">
+              <h3 class="lesson__title">:link · :visited</h3>
+              <div class="lesson__badges"><span class="badge badge--success">Stable</span></div>
+            </header>
+            <div class="lesson__body">
+              <div><p class="lesson__block-title">Definitions</p>
+                <dl class="defs">
+                  <dt><code>:link</code></dt><dd>Matches unvisited hyperlinks that have an <code>href</code>.</dd>
+                  <dt><code>:visited</code></dt><dd>Matches hyperlinks the user has already visited. Browsers limit which properties you can style (privacy).</dd>
+                </dl>
+              </div>
+              <div><p class="lesson__block-title">Syntax</p><pre class="code"><span class="c-sel">a:link</span>    { <span class="c-prop">color</span>: <span class="c-val">var(--color-primary)</span>; }
+<span class="c-sel">a:visited</span> { <span class="c-prop">color</span>: <span class="c-val">var(--color-primary-700)</span>; }</pre></div>
+              <div><p class="lesson__block-title">Live demonstration</p>
+                <div class="demo">
+                  <a href="#sec-pseudo-classes">An unvisited-style link</a>
+                  <a href="https://example.com" target="_blank" rel="noopener">Likely-visited link</a>
+                </div>
+              </div>
+              <div class="grid grid--2">
+                <div><p class="lesson__block-title">HTML</p><pre class="code"><span class="c-tag">&lt;a</span> <span class="c-attr">href</span>=<span class="c-str">"https://example.com"</span><span class="c-tag">&gt;</span>Link<span class="c-tag">&lt;/a&gt;</span></pre></div>
+                <div><p class="lesson__block-title">CSS</p><pre class="code"><span class="c-sel">a:link</span>    { <span class="c-prop">color</span>: <span class="c-val">#4f46e5</span>; }
+<span class="c-sel">a:visited</span> { <span class="c-prop">color</span>: <span class="c-val">#3730a3</span>; }</pre></div>
+              </div>
+              <div><p class="lesson__block-title">Browser support</p><div class="support"><span class="support__item">All browsers ✅</span></div></div>
+              <div class="grid grid--2">
+                <div class="callout callout--tip"><span class="callout__icon">✅</span><div><p class="callout__title">Best practice</p>Keep visited links distinguishable but not jarring; respect user privacy limits.</p></div></div>
+                <div class="callout callout--danger"><span class="callout__icon">⚠️</span><div><p class="callout__title">Common mistake</p>Trying to set <code>background</code> or font-size on <code>:visited</code> — browsers ignore most properties for privacy.</p></div></div>
+              </div>
+              <div><p class="lesson__block-title">Use cases</p><p class="lesson__prose">Search results, navigation, history-aware reading flows.</p></div>
+            </div>
+          </article>
+
+          <!-- :checked / :disabled / :enabled -->
+          <article class="lesson">
+            <header class="lesson__head">
+              <h3 class="lesson__title">:checked · :disabled · :enabled</h3>
+              <div class="lesson__badges"><span class="badge badge--success">Stable</span></div>
+            </header>
+            <div class="lesson__body">
+              <div><p class="lesson__block-title">Definitions</p>
+                <dl class="defs">
+                  <dt><code>:checked</code></dt><dd>Matches a radio, checkbox, or option that is currently selected.</dd>
+                  <dt><code>:disabled</code></dt><dd>Matches form controls marked <code>disabled</code> — not editable or submittable.</dd>
+                  <dt><code>:enabled</code></dt><dd>The inverse — a usable form control.</dd>
+                </dl>
+              </div>
+              <div><p class="lesson__block-title">Live demonstration</p>
+                <div class="demo demo--col">
+                  <label class="demo-check"><input type="checkbox" /> Toggle me (uses :checked)</label>
+                  <input class="demo-input" type="text" placeholder="Enabled input" />
+                  <input class="demo-input" type="text" placeholder="Disabled input" disabled />
+                </div>
+              </div>
+              <div><p class="lesson__block-title">CSS</p>
+                <pre class="code"><span class="c-sel">.demo-check input</span> { <span class="c-prop">appearance</span>: <span class="c-val">none</span>; <span class="c-prop">width</span>: <span class="c-val">22px</span>; <span class="c-prop">height</span>: <span class="c-val">22px</span>; }
+<span class="c-sel">.demo-check input:checked</span> { <span class="c-prop">background</span>: <span class="c-val">var(--color-primary)</span>; }
+<span class="c-sel">.demo-check input:checked::after</span> { <span class="c-prop">content</span>: <span class="c-str">"✓"</span>; }
+<span class="c-sel">.demo-input:disabled</span> { <span class="c-prop">background</span>: <span class="c-val">#eef2fb</span>; <span class="c-prop">cursor</span>: <span class="c-val">not-allowed</span>; }</pre>
+              </div>
+              <div><p class="lesson__block-title">Browser support</p><div class="support"><span class="support__item">All browsers ✅</span></div></div>
+              <div class="grid grid--2">
+                <div class="callout callout--tip"><span class="callout__icon">✅</span><div><p class="callout__title">Best practice</p>Use <code>:checked</code> with <code>~</code> or <code>+</code> combinators to build JS-free toggles, tabs and accordions.</p></div></div>
+                <div class="callout callout--danger"><span class="callout__icon">⚠️</span><div><p class="callout__title">Common mistake</p>Forgetting that disabled inputs are still submitted if they have a name &amp; value — set <code>readonly</code> instead if data must persist.</p></div></div>
+              </div>
+              <div><p class="lesson__block-title">Use cases</p><p class="lesson__prose">Custom checkboxes/radios, switch toggles, theme switches, disabled form states, conditional UI.</p></div>
+            </div>
+          </article>
+
+          <!-- Structural pseudo-classes group -->
+          <article class="lesson">
+            <header class="lesson__head">
+              <h3 class="lesson__title">:first-child · :last-child · :only-child · :empty</h3>
+              <div class="lesson__badges"><span class="badge badge--success">Stable</span></div>
+            </header>
+            <div class="lesson__body">
+              <div><p class="lesson__block-title">Definitions</p>
+                <dl class="defs">
+                  <dt><code>:first-child</code></dt><dd>Element is the first child of its parent.</dd>
+                  <dt><code>:last-child</code></dt><dd>Element is the last child of its parent.</dd>
+                  <dt><code>:only-child</code></dt><dd>Element has no siblings.</dd>
+                  <dt><code>:empty</code></dt><dd>Element has no children at all (not even text).</dd>
+                </dl>
+              </div>
+              <div><p class="lesson__block-title">Live demonstration</p>
+                <div class="demo demo--start">
+                  <ul class="struct-list" style="max-width:360px;">
+                    <li>First item — :first-child</li>
+                    <li>Second item</li>
+                    <li>Third item</li>
+                    <li>Last item — :last-child</li>
+                  </ul>
+                </div>
+              </div>
+              <div><p class="lesson__block-title">CSS</p>
+                <pre class="code"><span class="c-sel">li:first-child</span> { <span class="c-prop">border-left</span>: <span class="c-val">4px solid var(--color-primary)</span>; }
+<span class="c-sel">li:last-child</span>  { <span class="c-prop">border-left</span>: <span class="c-val">4px solid var(--color-accent)</span>; }
+<span class="c-sel">.empty:empty</span>   { <span class="c-prop">display</span>: <span class="c-val">none</span>; }</pre>
+              </div>
+              <div><p class="lesson__block-title">Browser support</p><div class="support"><span class="support__item">All browsers ✅</span></div></div>
+              <div class="grid grid--2">
+                <div class="callout callout--tip"><span class="callout__icon">✅</span><div><p class="callout__title">Best practice</p>Use <code>:empty</code> to hide empty result containers without JS.</p></div></div>
+                <div class="callout callout--danger"><span class="callout__icon">⚠️</span><div><p class="callout__title">Common mistake</p>A single whitespace makes <code>:empty</code> fail — use it only when you control the markup.</p></div></div>
+              </div>
+              <div><p class="lesson__block-title">Use cases</p><p class="lesson__prose">Removing the first/last separator, styling "no results" empty states, list-edge effects.</p></div>
+            </div>
+          </article>
+
+          <!-- :nth-child family -->
+          <article class="lesson">
+            <header class="lesson__head">
+              <h3 class="lesson__title">:nth-child() · :nth-last-child() · :nth-of-type() · :only-of-type</h3>
+              <div class="lesson__badges"><span class="badge badge--success">Stable</span></div>
+            </header>
+            <div class="lesson__body">
+              <div><p class="lesson__block-title">Definition</p>
+                <p class="lesson__definition">The <code>:nth-*</code> family selects elements by their position. They accept a formula <code>an+b</code> or the keywords <code>odd</code>/<code>even</code>.</p>
+              </div>
+              <div><p class="lesson__block-title">Accepted values</p>
+                <div class="table-wrap">
+                  <table class="table">
+                    <thead><tr><th>Formula</th><th>Matches</th></tr></thead>
+                    <tbody>
+                      <tr><td><code>odd</code></td><td>1st, 3rd, 5th…</td></tr>
+                      <tr><td><code>even</code></td><td>2nd, 4th, 6th…</td></tr>
+                      <tr><td><code>3</code></td><td>Only the 3rd element</td></tr>
+                      <tr><td><code>2n+1</code></td><td>Same as <code>odd</code></td></tr>
+                      <tr><td><code>3n</code></td><td>3rd, 6th, 9th…</td></tr>
+                      <tr><td><code>-n+3</code></td><td>First 3 elements</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div><p class="lesson__block-title">Live demonstration</p>
+                <div class="demo demo--start">
+                  <ul class="struct-list" style="max-width:380px;">
+                    <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li>
+                  </ul>
+                </div>
+                <p class="u-mt-2 u-muted">Odd rows are tinted; every 3n+1 row is bolded.</p>
+              </div>
+              <div><p class="lesson__block-title">CSS</p>
+                <pre class="code"><span class="c-sel">li:nth-child(odd)</span>   { <span class="c-prop">background</span>: <span class="c-val">var(--color-surface-soft)</span>; }
+<span class="c-sel">li:nth-child(3n+1)</span>   { <span class="c-prop">font-weight</span>: <span class="c-val">700</span>; }
+<span class="c-sel">li:nth-last-child(1)</span> { <span class="c-prop">color</span>: <span class="c-val">var(--color-accent)</span>; }</pre>
+              </div>
+              <div><p class="lesson__block-title">Browser support</p><div class="support"><span class="support__item">All browsers ✅</span></div></div>
+              <div class="grid grid--2">
+                <div class="callout callout--tip"><span class="callout__icon">✅</span><div><p class="callout__title">Best practice</p>Use <code>:nth-of-type</code> when elements of different types share a parent — it counts only matching tags.</p></div></div>
+                <div class="callout callout--danger"><span class="callout__icon">⚠️</span><div><p class="callout__title">Common mistake</p>Confusing <code>:nth-child</code> (position among all siblings) with <code>:nth-of-type</code> (position among same-tag siblings).</p></div></div>
+              </div>
+              <div><p class="lesson__block-title">Use cases</p><p class="lesson__prose">Zebra-striped tables, alternating grids, multi-column layouts, pagination, "first N items free" badges.</p></div>
+            </div>
+          </article>
+
+          <!-- :target / :root -->
+          <article class="lesson">
+            <header class="lesson__head">
+              <h3 class="lesson__title">:target · :root</h3>
+              <div class="lesson__badges"><span class="badge badge--success">Stable</span></div>
+            </header>
+            <div class="lesson__body">
+              <div><p class="lesson__block-title">Definitions</p>
+                <dl class="defs">
+                  <dt><code>:target</code></dt><dd>Matches the element whose <code>id</code> equals the current URL fragment (<code>#…</code>).</dd>
+                  <dt><code>:root</code></dt><dd>Matches the document root — <code>&lt;html&gt;</code>. The conventional place to declare global CSS variables.</dd>
+                </dl>
+              </div>
+              <div><p class="lesson__block-title">Live demonstration</p>
+                <div class="demo">
+                  <a class="btn btn--ghost" href="#demo-target-box">Click to target the box →</a>
+                  <div id="demo-target-box" class="demo-target" style="margin-left:auto;width:200px;">I change colour when targeted.</div>
+                </div>
+              </div>
+              <div><p class="lesson__block-title">CSS</p>
+                <pre class="code"><span class="c-sel">:root</span> { <span class="c-prop">--color-primary</span>: <span class="c-val">#4f46e5</span>; }
+<span class="c-sel">#demo-target-box:target</span> {
+  <span class="c-prop">background</span>: <span class="c-val">var(--color-primary-soft)</span>;
+  <span class="c-prop">border-color</span>: <span class="c-val">var(--color-primary)</span>;
+}</pre>
+              </div>
+              <div><p class="lesson__block-title">Browser support</p><div class="support"><span class="support__item">All browsers ✅</span></div></div>
+              <div><p class="lesson__block-title">Use cases</p><p class="lesson__prose">Pure-CSS modals, lightboxes, tab highlighting, scroll-spy-style "current section" indication, global theme tokens.</p></div>
+            </div>
+          </article>
+
+          <!-- Logical combinators :not / :is / :where -->
+          <article class="lesson">
+            <header class="lesson__head">
+              <h3 class="lesson__title">:not() · :is() · :where()</h3>
+              <div class="lesson__badges"><span class="badge badge--success">Stable</span><span class="badge badge--primary">Modern</span></div>
+            </header>
+            <div class="lesson__body">
+              <div><p class="lesson__block-title">Definitions</p>
+                <dl class="defs">
+                  <dt><code>:not()</code></dt><dd>Matches anything <em>except</em> the selectors inside.</dd>
+                  <dt><code>:is()</code></dt><dd>Matches any of the selectors inside; takes on the highest specificity of its arguments.</dd>
+                  <dt><code>:where()</code></dt><dd>Identical to <code>:is()</code> but with <strong>zero specificity</strong> — perfect for safe defaults.</dd>
+                </dl>
+              </div>
+              <div><p class="lesson__block-title">Live demonstration</p>
+                <div class="demo demo-not">
+                  <a href="#">Internal link</a>
+                  <a href="#" class="external">External link</a>
+                  <a href="#">Internal link</a>
+                </div>
+              </div>
+              <div><p class="lesson__block-title">CSS</p>
+                <pre class="code"><span class="c-com">/* :not() — style everything except .external */</span>
+<span class="c-sel">a:not(.external)</span> { <span class="c-prop">color</span>: <span class="c-val">var(--color-primary)</span>; }
+
+<span class="c-com">/* :is() — one rule for many headings */</span>
+<span class="c-sel">:is(h1, h2, h3)</span> { <span class="c-prop">color</span>: <span class="c-val">var(--color-heading)</span>; }
+
+<span class="c-com">/* :where() — zero-specificity base style */</span>
+<span class="c-sel">:where(button)</span> { <span class="c-prop">padding</span>: <span class="c-val">.5rem 1rem</span>; }</pre>
+              </div>
+              <div><p class="lesson__block-title">Browser support</p><div class="support"><span class="support__item">:not() all</span><span class="support__item">:is()/:where() 2021+</span></div></div>
+              <div class="grid grid--2">
+                <div class="callout callout--tip"><span class="callout__icon">✅</span><div><p class="callout__title">Best practice</p>Use <code>:where()</code> for resets &amp; base styles so a single class can override them without specificity wars.</p></div></div>
+                <div class="callout callout--danger"><span class="callout__icon">⚠️</span><div><p class="callout__title">Common mistake</p>Using <code>:is()</code> when you wanted a low-specificity default — it adopts the <em>highest</em> specificity of its arguments.</p></div></div>
+              </div>
+              <div><p class="lesson__block-title">Use cases</p><p class="lesson__prose">DRY selector lists, exception handling ("everything except…"), shareable base styles, modern resets.</p></div>
+            </div>
+          </article>
+
+          <!-- :has() -->
+          <article class="lesson">
+            <header class="lesson__head">
+              <h3 class="lesson__title">:has() — the "parent selector"</h3>
+              <div class="lesson__badges"><span class="badge badge--warning">Baseline 2023</span><span class="badge badge--primary">Modern</span></div>
+            </header>
+            <div class="lesson__body">
+              <div><p class="lesson__block-title">Definition</p>
+                <p class="lesson__definition"><code>:has()</code> matches an element that <em>contains</em> a descendant matching the argument — historically impossible in CSS until 2023. It's the long-awaited "parent selector".</p>
+              </div>
+              <div><p class="lesson__block-title">Live demonstration</p>
+                <div class="demo demo-has" style="flex-direction:column;">
+                  <card>This card has only text.</card>
+                  <card><img src="https://via.placeholder.com/40x40/4f46e5/fff" alt="" style="display:inline-block;vertical-align:middle;border-radius:6px;"> This card has an image — it gets a primary tint!</card>
+                </div>
+              </div>
+              <div><p class="lesson__block-title">CSS</p>
+                <pre class="code"><span class="c-com">/* Style a card that contains an &lt;img&gt; */</span>
+<span class="c-sel">card:has(img)</span> {
+  <span class="c-prop">background</span>: <span class="c-val">var(--color-primary-soft)</span>;
+  <span class="c-prop">border-color</span>: <span class="c-val">var(--color-primary)</span>;
+}
+
+<span class="c-com">/* Hide section if it has no articles */</span>
+<span class="c-sel">section:not(:has(article))</span> { <span class="c-prop">display</span>: <span class="c-val">none</span>; }</pre>
+              </div>
+              <div><p class="lesson__block-title">Browser support</p><div class="support"><span class="support__item">Chrome 105+</span><span class="support__item">Safari 15.4+</span><span class="support__item">Firefox 121+</span></div></div>
+              <div class="callout callout--warn"><span class="callout__icon">💡</span><div><p class="callout__title">Heads-up</p>Still not in older browsers (≈2022 and earlier). Use as a progressive enhancement, not for critical layout.</p></div></div>
+              <div><p class="lesson__block-title">Use cases</p><p class="lesson__prose">Conditional styling based on content, "card with image" layouts, form validation states (<code>:has(input:invalid)</code>), and reducing JavaScript.</p></div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+
+      <!-- =================================================================
+           SECTION 2 — PSEUDO-ELEMENTS
+           ================================================================= -->
+      <section class="section" id="sec-pseudo-elements" aria-labelledby="sec-pe-title">
+        <div class="content">
+          <header class="section__head">
+            <span class="section__num">SECTION 02</span>
+            <h2 class="section__title" id="sec-pe-title">Pseudo-elements</h2>
+            <p class="section__desc">
+              Unlike pseudo-classes (which select an existing element in a state),
+              pseudo-elements create or style a <em>part</em> of an element — such
+              as generated content, the first letter, or the selection highlight.
+              They use a double-colon syntax: <code>::name</code>.
+            </p>
+          </header>
+
+          <!-- ::before / ::after -->
+          <article class="lesson">
+            <header class="lesson__head">
+              <h3 class="lesson__title">::before · ::after</h3>
+              <div class="lesson__badges"><span class="badge badge--success">Stable</span></div>
+            </header>
+            <div class="lesson__body">
+              <div><p class="lesson__block-title">Definition</p>
+                <p class="lesson__definition">Insert a generated, anonymous child element at the start (<code>::before</code>) or end (<code>::after</code>) of an element's content. They only appear if the <code>content</code> property is set (even empty <code>""</code>).</p>
+              </div>
+              <div><p class="lesson__block-title">Syntax</p>
+                <pre class="code"><span class="c-sel">.badge::before</span> {
+  <span class="c-prop">content</span>: <span class="c-str">"★ "</span>;
+  <span class="c-prop">color</span>: <span class="c-val">gold</span>;
+}</pre>
+              </div>
+              <div><p class="lesson__block-title">Live demonstration</p>
+                <div class="demo"><span class="demo-pe">Featured</span></div>
+              </div>
+              <div class="grid grid--2">
+                <div><p class="lesson__block-title">HTML</p><pre class="code"><span class="c-tag">&lt;span</span> <span class="c-attr">class</span>=<span class="c-str">"demo-pe"</span><span class="c-tag">&gt;</span>Featured<span class="c-tag">&lt;/span&gt;</span></pre></div>
+                <div><p class="lesson__block-title">CSS</p><pre class="code"><span class="c-sel">.demo-pe::before</span> { <span class="c-prop">content</span>: <span class="c-str">"★"</span>; }
+<span class="c-sel">.demo-pe::after</span>  {
+  <span class="c-prop">content</span>: <span class="c-str">""</span>;
+  <span class="c-prop">border</span>: <span class="c-val">2px dashed var(--color-primary)</span>;
+}</pre></div>
+              </div>
+              <div><p class="lesson__block-title">Browser support</p><div class="support"><span class="support__item">All browsers ✅</span></div></div>
+              <div class="grid grid--2">
+                <div class="callout callout--tip"><span class="callout__icon">✅</span><div><p class="callout__title">Best practice</p>Use for decorative content only — never for content that screen-reader users need (it can be inconsistent).</p></div></div>
+                <div class="callout callout--danger"><span class="callout__icon">⚠️</span><div><p class="callout__title">Common mistake</p>Forgetting <code>content: "";</code> — without it, the pseudo-element won't render at all.</p></div></div>
+              </div>
+              <div><p class="lesson__block-title">Use cases</p><p class="lesson__prose">Icons, badges, clear-fix, tooltips, decorative borders, counters, clearfix hacks.</p></div>
+            </div>
+          </article>
+
+          <!-- ::first-letter / ::first-line -->
+          <article class="lesson">
+            <header class="lesson__head">
+              <h3 class="lesson__title">::first-letter · ::first-line</h3>
+              <div class="lesson__badges"><span class="badge badge--success">Stable</span></div>
+            </header>
+            <div class="lesson__body">
+              <div><p class="lesson__block-title">Live demonstration</p>
+                <div class="demo demo--start" style="display:block;align-items:stretch;">
+                  <p class="demo-dropcap">Long ago, in a stylesheet far away, a typographer decided that the first letter of a paragraph deserved to stand out. This technique — the drop cap — still adds elegance to articles today.</p>
+                  <hr style="margin:1rem 0;border:0;border-top:1px dashed var(--color-border);">
+                  <p class="demo-firstline">This is the first line of a paragraph and it is bold.
+                  This second line returns to normal weight. Notice how the styling
+                  adapts automatically even as the viewport reflows.</p>
+                </div>
+              </div>
+              <div><p class="lesson__block-title">CSS</p>
+                <pre class="code"><span class="c-sel">.demo-dropcap::first-letter</span> {
+  <span class="c-prop">float</span>: <span class="c-val">left</span>;
+  <span class="c-prop">font-size</span>: <span class="c-val">3.5rem</span>;
+  <span class="c-prop">color</span>: <span class="c-val">var(--color-primary)</span>;
+}
+<span class="c-sel">.demo-firstline::first-line</span> {
+  <span class="c-prop">font-weight</span>: <span class="c-val">700</span>;
+}</pre>
+              </div>
+              <div><p class="lesson__block-title">Browser support</p><div class="support"><span class="support__item">All browsers ✅</span></div></div>
+              <div><p class="lesson__block-title">Use cases</p><p class="lesson__prose">Editorial drop caps, magazine-style articles, lead-paragraph styling.</p></div>
+            </div>
+          </article>
+
+          <!-- ::selection -->
+          <article class="lesson">
+            <header class="lesson__head">
+              <h3 class="lesson__title">::selection</h3>
+              <div class="lesson__badges"><span class="badge badge--success">Stable</span></div>
+            </header>
+            <div class="lesson__body">
+              <div><p class="lesson__block-title">Definition</p>
+                <p class="lesson__definition">Styles the portion of text the user has highlighted/selected. Only a handful of properties are allowed: <code>color</code>, <code>background</code>, <code>text-shadow</code>, and a few others.</p>
+              </div>
+              <div><p class="lesson__block-title">Live demonstration</p>
+                <div class="demo"><p class="demo-select">Try selecting this text with your mouse — the highlight is themed.</p></div>
+              </div>
+              <div><p class="lesson__block-title">CSS</p>
+                <pre class="code"><span class="c-sel">.demo-select::selection</span> {
+  <span class="c-prop">background</span>: <span class="c-val">var(--color-primary)</span>;
+  <span class="c-prop">color</span>: <span class="c-val">#fff</span>;
+}</pre>
+              </div>
+              <div><p class="lesson__block-title">Use cases</p><p class="lesson__prose">On-brand text selection, code-block selection styling, themed reading experiences.</p></div>
+            </div>
+          </article>
+
+          <!-- ::marker -->
+          <article class="lesson">
+            <header class="lesson__head">
+              <h3 class="lesson__title">::marker</h3>
+              <div class="lesson__badges"><span class="badge badge--warning">Baseline 2021</span></div>
+            </header>
+            <div class="lesson__body">
+              <div><p class="lesson__block-title">Definition</p>
+                <p class="lesson__definition">Targets the bullet or number marker of a list item (<code>&lt;li&gt;</code>) — finally letting us style bullets without hacks.</p>
+              </div>
+              <div><p class="lesson__block-title">Live demonstration</p>
+                <div class="demo demo--start">
+                  <ul class="demo-marker">
+                    <li>First idea</li>
+                    <li>Second idea</li>
+                    <li>Third idea</li>
+                  </ul>
+                </div>
+              </div>
+              <div><p class="lesson__block-title">CSS</p>
+                <pre class="code"><span class="c-sel">li::marker</span> {
+  <span class="c-prop">content</span>: <span class="c-str">"▸ "</span>;
+  <span class="c-prop">color</span>: <span class="c-val">var(--color-primary)</span>;
+  <span class="c-prop">font-weight</span>: <span class="c-val">700</span>;
+}</pre>
+              </div>
+              <div><p class="lesson__block-title">Browser support</p><div class="support"><span class="support__item">Chrome 86+</span><span class="support__item">Firefox 68+</span><span class="support__item">Safari 14.1+</span></div></div>
+              <div><p class="lesson__block-title">Use cases</p><p class="lesson__prose">Themed bullets, custom numbered lists, emoji markers, checklist-style lists.</p></div>
+            </div>
+          </article>
+
+          <!-- ::placeholder -->
+          <article class="lesson">
+            <header class="lesson__head">
+              <h3 class="lesson__title">::placeholder</h3>
+              <div class="lesson__badges"><span class="badge badge--success">Stable</span></div>
+            </header>
+            <div class="lesson__body">
+              <div><p class="lesson__block-title">Definition</p>
+                <p class="lesson__definition">Styles the placeholder text inside <code>&lt;input&gt;</code> and <code>&lt;textarea&gt;</code> fields.</p>
+              </div>
+              <div><p class="lesson__block-title">Live demonstration</p>
+                <div class="demo"><input class="demo-input" type="email" placeholder="you@example.com" /></div>
+              </div>
+              <div><p class="lesson__block-title">CSS</p>
+                <pre class="code"><span class="c-sel">.demo-input::placeholder</span> {
+  <span class="c-prop">color</span>: <span class="c-val">var(--color-text-subtle)</span>;
+  <span class="c-prop">font-style</span>: <span class="c-val">italic</span>;
+}</pre>
+              </div>
+              <div><p class="lesson__block-title">Use cases</p><p class="lesson__prose">Form hints, branded input styling, gentle onboarding copy.</p></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+
+      <!-- =================================================================
+           SECTION 3 — CSS VARIABLES
+           ================================================================= -->
+      <section class="section" id="sec-variables" aria-labelledby="sec-vars-title">
+        <div class="content">
+          <header class="section__head">
+            <span class="section__num">SECTION 03</span>
+            <h2 class="section__title" id="sec-vars-title">CSS Variables (Custom Properties)</h2>
+            <p class="section__desc">
+              Custom properties let you store values in named tokens and reuse them.
+              They cascade, are inherited, can change at runtime (great for themes)
+              and accept any valid CSS value — including other variables.
+            </p>
+          </header>
+
+          <article class="lesson">
+            <header class="lesson__head">
+              <h3 class="lesson__title">Declaring &amp; using custom properties</h3>
+              <div class="lesson__badges"><span class="badge badge--success">Stable</span></div>
+            </header>
+            <div class="lesson__body">
+              <div><p class="lesson__block-title">Syntax</p>
+                <pre class="code"><span class="c-com">/* Declare on :root for global scope */</span>
+<span class="c-sel">:root</span> {
+  <span class="c-prop">--color-primary</span>: <span class="c-val">#4f46e5</span>;
+  <span class="c-prop">--space-4</span>: <span class="c-val">1rem</span>;
+}
+
+<span class="c-com">/* Use with var() anywhere */</span>
+<span class="c-sel">.btn</span> {
+  <span class="c-prop">background</span>: <span class="c-val">var(--color-primary)</span>;
+  <span class="c-prop">padding</span>: <span class="c-val">var(--space-4)</span>;
+}
+
+<span class="c-com">/* Fallback value if --x is undefined */</span>
+<span class="c-prop">color</span>: <span class="c-val">var(--text, #333)</span>;</pre>
+              </div>
+              <div><p class="lesson__block-title">Variable scope &amp; theming demo</p>
+                <div class="demo">
+                  <span class="demo-theme">Default</span>
+                  <span class="demo-theme warm">Warm token</span>
+                  <span class="demo-theme cool">Cool token</span>
+                  <span class="demo-theme danger">Danger token</span>
+                </div>
+                <p class="demo__note">Each button reuses the <em>same</em> rule — only the tokens change locally.</p>
+              </div>
+              <div><p class="lesson__block-title">CSS</p>
+                <pre class="code"><span class="c-sel">.demo-theme</span> {
+  <span class="c-prop">--btn-bg</span>: <span class="c-val">var(--color-primary)</span>;
+  <span class="c-prop">--btn-fg</span>: <span class="c-val">#fff</span>;
+  <span class="c-prop">background</span>: <span class="c-val">var(--btn-bg)</span>;
+  <span class="c-prop">color</span>: <span class="c-val">var(--btn-fg)</span>;
+}
+<span class="c-sel">.demo-theme.warm</span>   { <span class="c-prop">--btn-bg</span>: <span class="c-val">orange</span>; }
+<span class="c-sel">.demo-theme.danger</span> { <span class="c-prop">--btn-bg</span>: <span class="c-val">red</span>; }</pre>
+              </div>
+              <div class="grid grid--2">
+                <div class="callout callout--tip"><span class="callout__icon">✅</span><div><p class="callout__title">Best practice</p>Name tokens semantically (<code>--space-gutter</code>, not <code>--blue</code>) so themes can swap values cleanly.</p></div></div>
+                <div class="callout callout--danger"><span class="callout__icon">⚠️</span><div><p class="callout__title">Common mistake</p>Always providing a fallback bloats the codebase — only fall back when the variable might be undefined.</p></div></div>
+              </div>
+              <div><p class="lesson__block-title">Use cases</p><p class="lesson__prose">Design systems, dark/light themes, component variants, responsive spacing (<code>--space-4</code> resized in media queries), live theming.</p></div>
+            </div>
+          </article>
+
+          <article class="lesson">
+            <header class="lesson__head">
+              <h3 class="lesson__title">Mini design system</h3>
+              <div class="lesson__badges"><span class="badge badge--primary">Reusable tokens</span></div>
+            </header>
+            <div class="lesson__body">
+              <p>This very page is a working design system. The <code>:root</code> in <code>index.css</code> declares every color, spacing, radius, shadow and motion value as a token. Every component reads from those tokens — that's why theming (including dark mode) is a one-place change.</p>
+              <pre class="code"><span class="c-sel">:root</span> {
+  <span class="c-prop">--color-primary</span>: <span class="c-val">#4f46e5</span>;
+  <span class="c-prop">--space-4</span>: <span class="c-val">1rem</span>;
+  <span class="c-prop">--radius-lg</span>: <span class="c-val">16px</span>;
+  <span class="c-prop">--shadow</span>: <span class="c-val">0 6px 24px rgba(15,27,45,.08)</span>;
+}
+<span class="c-sel">@@media (prefers-color-scheme: dark)</span> {
+  <span class="c-sel">:root</span> { <span class="c-prop">--color-primary</span>: <span class="c-val">#818cf8</span>; }
+}</pre>
+            </div>
+          </article>
+        </div>
+      </section>
+
+
+      <!-- =================================================================
+           SECTION 4 — CSS FUNCTIONS
+           ================================================================= -->
+      <section class="section" id="sec-functions" aria-labelledby="sec-fn-title">
+        <div class="content">
+          <header class="section__head">
+            <span class="section__num">SECTION 04</span>
+            <h2 class="section__title" id="sec-fn-title">CSS Functions</h2>
+            <p class="section__desc">
+              Functions turn CSS from static into a computational language.
+              <code>calc()</code> does math; <code>min()</code>/<code>max()</code>/<code>clamp()</code>
+              pick responsive values; <code>var()</code> reads tokens; <code>url()</code>
+              loads assets; <code>attr()</code> reads HTML attributes.
+            </p>
+          </header>
+
+          <!-- calc() -->
+          <article class="lesson">
+            <header class="lesson__head">
+              <h3 class="lesson__title">calc()</h3>
+            </header>
+            <div class="lesson__body">
+              <div><p class="lesson__block-title">Definition</p><p class="lesson__definition">Performs math on mixed units — essential when combining <code>%</code> with <code>px</code>, <code>rem</code>, <code>vh</code>, etc.</p></div>
+              <div><p class="lesson__block-title">Live demonstration</p>
+                <div class="demo"><div class="demo-calc">width: calc(100% − 40px)</div></div>
+              </div>
+              <div><p class="lesson__block-title">CSS</p>
+                <pre class="code"><span class="c-sel">.demo-calc</span> {
+  <span class="c-prop">width</span>: <span class="c-val">calc(100% - 40px)</span>;   <span class="c-com">/* note spaces around - */</span>
+  <span class="c-prop">padding</span>: <span class="c-val">calc(var(--space-4) * 2)</span>;
+}</pre>
+              </div>
+              <div class="callout callout--danger"><span class="callout__icon">⚠️</span><div><p class="callout__title">Common mistake</p>Forgetting the spaces around <code>+</code> and <code>-</code> — <code>calc(100%-40px)</code> is parsed as an invalid value.</p></div></div>
+            </div>
+          </article>
+
+          <!-- clamp() / min() / max() -->
+          <article class="lesson">
+            <header class="lesson__head">
+              <h3 class="lesson__title">clamp() · min() · max()</h3>
+            </header>
+            <div class="lesson__body">
+              <div><p class="lesson__block-title">Definitions</p>
+                <dl class="defs">
+                  <dt><code>min(a, b, …)</code></dt><dd>Picks the smallest — caps a maximum size.</dd>
+                  <dt><code>max(a, b, …)</code></dt><dd>Picks the largest — sets a minimum size.</dd>
+                  <dt><code>clamp(min, ideal, max)</code></dt><dd>Fluid value that never goes below <code>min</code> or above <code>max</code>.</dd>
+                </dl>
+              </div>
+              <div><p class="lesson__block-title">Live demonstration</p>
+                <div class="demo demo--col">
+                  <div class="demo-clamp">Fluid heading — resize the window!</div>
+                  <div class="demo-minmax">Container is at most 480px wide</div>
+                </div>
+              </div>
+              <div><p class="lesson__block-title">CSS</p>
+                <pre class="code"><span class="c-sel">.demo-clamp</span>  { <span class="c-prop">font-size</span>: <span class="c-val">clamp(1.25rem, 5vw, 3rem)</span>; }
+<span class="c-sel">.demo-minmax</span> { <span class="c-prop">width</span>: <span class="c-val">min(100%, 480px)</span>; }</pre>
+              </div>
+              <div class="callout callout--tip"><span class="callout__icon">✅</span><div><p class="callout__title">Best practice</p><code>clamp()</code> is the modern way to do fluid typography — no media queries needed.</p></div></div>
+            </div>
+          </article>
+
+          <!-- var() / url() / attr() -->
+          <article class="lesson">
+            <header class="lesson__head">
+              <h3 class="lesson__title">var() · url() · attr()</h3>
+            </header>
+            <div class="lesson__body">
+              <div><p class="lesson__block-title">Definitions</p>
+                <dl class="defs">
+                  <dt><code>var(--x, fallback)</code></dt><dd>Reads a custom property; <code>fallback</code> is used if undefined.</dd>
+                  <dt><code>url("…")</code></dt><dd>Loads an external resource (image, font, cursor).</dd>
+                  <dt><code>attr(name)</code></dt><dd>Reads an HTML attribute value. Limited browser support for anything other than <code>content</code>.</dd>
+                </dl>
+              </div>
+              <div><p class="lesson__block-title">Live demonstration (attr-driven tooltip)</p>
+                <div class="demo demo-attr"><a href="#" data-tip="Hello from the data-tip attribute!">Hover this link</a></div>
+              </div>
+              <div><p class="lesson__block-title">CSS</p>
+                <pre class="code"><span class="c-sel">[data-tip]:hover::after</span> {
+  <span class="c-prop">content</span>: <span class="c-val">attr(data-tip)</span>;
+  <span class="c-prop">background</span>: <span class="c-val">#0f172a</span>;
+}
+<span class="c-sel">.logo</span> { <span class="c-prop">background-image</span>: <span class="c-val">url("logo.svg")</span>; }</pre>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+
+      <!-- =================================================================
+           SECTION 5 — MEDIA QUERIES
+           ================================================================= -->
+      <section class="section" id="sec-media-queries" aria-labelledby="sec-mq-title">
+        <div class="content">
+          <header class="section__head">
+            <span class="section__num">SECTION 05</span>
+            <h2 class="section__title" id="sec-mq-title">Media Queries</h2>
+            <p class="section__desc">
+              Media queries let styles adapt to the device — viewport width,
+              orientation, resolution, color scheme, motion preference, input
+              type and more. They are the backbone of responsive design.
+            </p>
+          </header>
+
+          <article class="lesson">
+            <header class="lesson__head">
+              <h3 class="lesson__title">@media &amp; common breakpoints</h3>
+            </header>
+            <div class="lesson__body">
+              <div><p class="lesson__block-title">Mobile-first vs desktop-first</p>
+                <div class="table-wrap">
+                  <table class="table">
+                    <thead><tr><th>Approach</th><th>Pattern</th><th>When to use</th></tr></thead>
+                    <tbody>
+                      <tr><td>Mobile-first</td><td><code>min-width</code> queries add styles as screens grow</td><td>Modern default — smaller, faster CSS</td></tr>
+                      <tr><td>Desktop-first</td><td><code>max-width</code> queries remove styles as screens shrink</td><td>Legacy codebases</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div><p class="lesson__block-title">Common breakpoints</p>
+                <pre class="code"><span class="c-com">/* Mobile-first: base = mobile styles */</span>
+<span class="c-sel">@@media (min-width: 640px)</span>  { <span class="c-com">/* small tablets */</span> }
+<span class="c-sel">@@media (min-width: 768px)</span>  { <span class="c-com">/* tablets      */</span> }
+<span class="c-sel">@@media (min-width: 1024px)</span> { <span class="c-com">/* laptops      */</span> }
+<span class="c-sel">@@media (min-width: 1280px)</span> { <span class="c-com">/* desktops     */</span> }</pre>
+              </div>
+              <div><p class="lesson__block-title">Live demonstration</p>
+                <div class="demo">
+                  <div class="grid grid--auto" style="width:100%;">
+                    <div class="card u-center" style="padding:1rem;"><strong>1</strong><br><span class="u-muted">Resize the window to watch the grid reflow</span></div>
+                    <div class="card u-center" style="padding:1rem;"><strong>2</strong></div>
+                    <div class="card u-center" style="padding:1rem;"><strong>3</strong></div>
+                    <div class="card u-center" style="padding:1rem;"><strong>4</strong></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="lesson">
+            <header class="lesson__head">
+              <h3 class="lesson__title">Orientation · Resolution · Hover · Pointer</h3>
+            </header>
+            <div class="lesson__body">
+              <div><p class="lesson__block-title">Examples</p>
+                <pre class="code"><span class="c-com">/* Landscape phones */</span>
+<span class="c-sel">@@media (orientation: landscape) and (max-height: 500px)</span> { }
+
+<span class="c-com">/* High-DPI / retina screens */</span>
+<span class="c-sel">@@media (min-resolution: 2dppx)</span> { }
+
+<span class="c-com">/* Devices WITHOUT hover (touch) */</span>
+<span class="c-sel">@@media (hover: none)</span> { <span class="c-prop">--hover-style</span>: <span class="c-val">none</span>; }
+
+<span class="c-com">/* Coarse pointer (finger, not mouse) */</span>
+<span class="c-sel">@@media (pointer: coarse)</span> { <span class="c-prop">--tap-size</span>: <span class="c-val">48px</span>; }</pre>
+              </div>
+              <div class="callout callout--tip"><span class="callout__icon">✅</span><div><p class="callout__title">Best practice</p>Use <code>(hover: hover)</code> and <code>(pointer: fine)</code> to gate desktop-only interactions, rather than sniffing screen width.</p></div></div>
+            </div>
+          </article>
+
+          <article class="lesson">
+            <header class="lesson__head">
+              <h3 class="lesson__title">Dark mode · Print · Reduced motion</h3>
+            </header>
+            <div class="lesson__body">
+              <pre class="code"><span class="c-com">/* Honor OS dark-mode preference */</span>
+<span class="c-sel">@@media (prefers-color-scheme: dark)</span> {
+  <span class="c-sel">:root</span> { <span class="c-prop">--color-bg</span>: <span class="c-val">#0a1020</span>; }
+}
+
+<span class="c-com">/* Print: hide chrome, force colors */</span>
+<span class="c-sel">@@media print</span> {
+  <span class="c-sel">.header, .sidebar, .footer</span> { <span class="c-prop">display</span>: <span class="c-val">none</span>; }
+  <span class="c-sel">body</span> { <span class="c-prop">background</span>: <span class="c-val">#fff</span>; }
+}
+
+<span class="c-com">/* Respect reduced motion */</span>
+<span class="c-sel">@@media (prefers-reduced-motion: reduce)</span> {
+  <span class="c-sel">*</span> { <span class="c-prop">animation</span>: <span class="c-val">none !important</span>; <span class="c-prop">transition</span>: <span class="c-val">none !important</span>; }
+}</pre>
+              <div class="callout callout--warn"><span class="callout__icon">💡</span><div><p class="callout__title">Try it</p>This whole site already responds to dark mode and print — change your OS theme or print-preview this page.</p></div></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+
+      <!-- =================================================================
+           SECTION 6 — MODERN CSS FEATURES
+           ================================================================= -->
+      <section class="section" id="sec-modern" aria-labelledby="sec-modern-title">
+        <div class="content">
+          <header class="section__head">
+            <span class="section__num">SECTION 06</span>
+            <h2 class="section__title" id="sec-modern-title">Modern CSS Features</h2>
+            <p class="section__desc">
+              The last few years have shipped game-changers: native aspect ratios,
+              blend modes, masking, container containment, accent colors and more.
+              Each removes a chunk of JavaScript from your bundle.
+            </p>
+          </header>
+
+          <div class="grid grid--2">
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">aspect-ratio</h3></header>
+              <div class="demo"><div class="demo-ratio">16:9</div></div>
+              <pre class="code u-mt-4"><span class="c-sel">.demo-ratio</span> { <span class="c-prop">aspect-ratio</span>: <span class="c-val">16 / 9</span>; <span class="c-prop">width</span>: <span class="c-val">180px</span>; }</pre>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">accent-color</h3></header>
+              <div class="demo demo--col"><div class="demo-accent" style="width:100%;"><label><input type="checkbox" checked> Tinted checkbox</label><input type="range" value="60"></div></div>
+              <pre class="code u-mt-4"><span class="c-sel">input</span> { <span class="c-prop">accent-color</span>: <span class="c-val">var(--color-primary)</span>; }</pre>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">scroll-snap</h3></header>
+              <div class="demo"><div class="demo-snap"><div style="background:#6366f1">1</div><div style="background:#06b6d4">2</div><div style="background:#f59e0b">3</div><div style="background:#10b981">4</div></div></div>
+              <pre class="code u-mt-4"><span class="c-sel">.demo-snap</span> { <span class="c-prop">scroll-snap-type</span>: <span class="c-val">x mandatory</span>; }
+<span class="c-sel">.demo-snap > *</span> { <span class="c-prop">scroll-snap-align</span>: <span class="c-val">center</span>; }</pre>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">resize</h3></header>
+              <div class="demo"><div class="demo-resize">Drag my bottom-right corner →</div></div>
+              <pre class="code u-mt-4"><span class="c-sel">.demo-resize</span> { <span class="c-prop">resize</span>: <span class="c-val">both</span>; <span class="c-prop">overflow</span>: <span class="c-val">auto</span>; }</pre>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">mix-blend-mode</h3></header>
+              <div class="demo"><div class="demo-blend"><div class="b1"></div><div class="b2"></div></div></div>
+              <pre class="code u-mt-4"><span class="c-sel">.b2</span> { <span class="c-prop">mix-blend-mode</span>: <span class="c-val">screen</span>; }</pre>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">background-blend-mode</h3></header>
+              <div class="demo"><div class="demo-bgblend"></div></div>
+              <pre class="code u-mt-4"><span class="c-sel">.demo-bgblend</span> { <span class="c-prop">background-blend-mode</span>: <span class="c-val">overlay</span>; }</pre>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">mask / mask-image</h3></header>
+              <div class="demo"><div class="demo-mask"></div></div>
+              <pre class="code u-mt-4"><span class="c-sel">.demo-mask</span> {
+  <span class="c-prop">-webkit-mask-image</span>: <span class="c-val">linear-gradient(90deg, transparent, #000 30%, #000 70%, transparent)</span>;
+  <span class="c-prop">mask-image</span>: <span class="c-val">linear-gradient(90deg, transparent, #000 30%, #000 70%, transparent)</span>;
+}</pre>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">isolation · contain</h3></header>
+              <div class="demo demo--col">
+                <div class="demo-contain">contain: layout paint — this element is isolated from the rest of the page for performance.</div>
+              </div>
+              <pre class="code u-mt-4"><span class="c-sel">.demo-contain</span> { <span class="c-prop">contain</span>: <span class="c-val">layout paint</span>; }
+<span class="c-sel">.demo-isolated</span> { <span class="c-prop">isolation</span>: <span class="c-val">isolate</span>; }</pre>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">caret-color · user-select</h3></header>
+              <div class="demo demo--col">
+                <input class="demo-caret" type="text" placeholder="Click to see red caret">
+                <p class="demo-noselect">You cannot select this text</p>
+              </div>
+              <pre class="code u-mt-4"><span class="c-sel">.demo-caret</span>   { <span class="c-prop">caret-color</span>: <span class="c-val">red</span>; }
+<span class="c-sel">.demo-noselect</span> { <span class="c-prop">user-select</span>: <span class="c-val">none</span>; }</pre>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">appearance · scroll-behavior</h3></header>
+              <pre class="code"><span class="c-com">/* Strip native widget styling */</span>
+<span class="c-sel">input</span> { <span class="c-prop">appearance</span>: <span class="c-val">none</span>; }
+
+<span class="c-com">/* Smooth in-page anchor scrolling */</span>
+<span class="c-sel">html</span> { <span class="c-prop">scroll-behavior</span>: <span class="c-val">smooth</span>; }
+<span class="c-com">/* (this site uses it — try the sidebar links!) */</span></pre>
+              <div class="callout callout--warn"><span class="callout__icon">💡</span><div><p class="callout__title">Tip</p>Always disable <code>scroll-behavior: smooth</code> inside <code>@@media (prefers-reduced-motion)</code>.</p></div></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- =================================================================
+           SECTION 7 — ADVANCED SELECTORS
+           ================================================================= -->
+      <section class="section" id="sec-selectors" aria-labelledby="sec-sel-title">
+        <div class="content">
+          <header class="section__head">
+            <span class="section__num">SECTION 07</span>
+            <h2 class="section__title" id="sec-sel-title">Advanced Selectors</h2>
+            <p class="section__desc">
+              Beyond classes and IDs, CSS offers attribute selectors and
+              combinators that target elements by their attributes, position and
+              relationships in the DOM tree.
+            </p>
+          </header>
+
+          <!-- Attribute selectors -->
+          <article class="lesson">
+            <header class="lesson__head"><h3 class="lesson__title">Attribute selectors</h3></header>
+            <div class="lesson__body">
+              <div class="table-wrap">
+                <table class="table">
+                  <thead><tr><th>Syntax</th><th>Matches</th></tr></thead>
+                  <tbody>
+                    <tr><td><code>[href]</code></td><td>Has the attribute</td></tr>
+                    <tr><td><code>[type="text"]</code></td><td>Exact value</td></tr>
+                    <tr><td><code>[class^="btn"]</code></td><td>Starts with "btn"</td></tr>
+                    <tr><td><code>[href$=".pdf"]</code></td><td>Ends with ".pdf"</td></tr>
+                    <tr><td><code>[href*="login"]</code></td><td>Contains "login"</td></tr>
+                    <tr><td><code>[lang|="en"]</code></td><td>Equals "en" or starts with "en-"</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div><p class="lesson__block-title">Live demonstration</p>
+                <div class="demo demo-attr-sel" style="display:block;max-width:380px;">
+                  <a href="https://example.com">https link → green</a>
+                  <a href="mailto:hi@example.com">mailto link → blue</a>
+                  <a href="/file.pdf">.pdf link → red</a>
+                  <a href="#" class="btn-link">class contains "btn" → primary</a>
+                </div>
+              </div>
+              <div><p class="lesson__block-title">CSS</p>
+                <pre class="code"><span class="c-sel">a[href^="https://"]</span> { <span class="c-prop">color</span>: <span class="c-val">green</span>; }
+<span class="c-sel">a[href^="mailto:"]</span> { <span class="c-prop">color</span>: <span class="c-val">blue</span>; }
+<span class="c-sel">a[href$=".pdf"]</span>    { <span class="c-prop">color</span>: <span class="c-val">red</span>; }
+<span class="c-sel">a[class*="btn"]</span>    { <span class="c-prop">color</span>: <span class="c-val">var(--color-primary)</span>; }</pre>
+              </div>
+            </div>
+          </article>
+
+          <!-- Combinators -->
+          <article class="lesson">
+            <header class="lesson__head"><h3 class="lesson__title">Combinators</h3></header>
+            <div class="lesson__body">
+              <div class="table-wrap">
+                <table class="table">
+                  <thead><tr><th>Symbol</th><th>Name</th><th>Matches</th></tr></thead>
+                  <tbody>
+                    <tr><td><code>A B</code></td><td>Descendant</td><td>Any <code>B</code> inside <code>A</code> (any depth)</td></tr>
+                    <tr><td><code>A &gt; B</code></td><td>Child</td><td><code>B</code> that is a direct child of <code>A</code></td></tr>
+                    <tr><td><code>A + B</code></td><td>Adjacent sibling</td><td><code>B</code> immediately after <code>A</code></td></tr>
+                    <tr><td><code>A ~ B</code></td><td>General sibling</td><td>Any <code>B</code> that follows <code>A</code></td></tr>
+                    <tr><td><code>*</code></td><td>Universal</td><td>All elements</td></tr>
+                    <tr><td><code>A, B</code></td><td>Grouping</td><td>Both <code>A</code> and <code>B</code></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div><p class="lesson__block-title">Live demonstration</p>
+                <div class="demo-combinators">
+                  <section>
+                    <h4>section &gt; h4 → primary colour</h4>
+                    <p>h4 + p → tinted background (immediately adjacent)</p>
+                    <p>h4 ~ p → italicised (general sibling)</p>
+                    <p>Another general sibling</p>
+                  </section>
+                </div>
+              </div>
+              <div><p class="lesson__block-title">CSS</p>
+                <pre class="code"><span class="c-sel">section > h4</span> { <span class="c-prop">color</span>: <span class="c-val">var(--color-primary)</span>; }
+<span class="c-sel">h4 + p</span>      { <span class="c-prop">background</span>: <span class="c-val">var(--color-primary-soft)</span>; }
+<span class="c-sel">h4 ~ p</span>      { <span class="c-prop">font-style</span>: <span class="c-val">italic</span>; }</pre>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+
+      <!-- =================================================================
+           SECTION 8 — CSS ARCHITECTURE
+           ================================================================= -->
+      <section class="section" id="sec-architecture" aria-labelledby="sec-arch-title">
+        <div class="content">
+          <header class="section__head">
+            <span class="section__num">SECTION 08</span>
+            <h2 class="section__title" id="sec-arch-title">CSS Architecture</h2>
+            <p class="section__desc">
+              As stylesheets grow, structure matters. These patterns keep large
+              codebases predictable, themeable and maintainable.
+            </p>
+          </header>
+
+          <div class="grid grid--2">
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">Reset vs Normalize</h3></header>
+              <pre class="code"><span class="c-com">/* Minimal modern reset */</span>
+<span class="c-sel">*, *::before, *::after</span> { <span class="c-prop">box-sizing</span>: <span class="c-val">border-box</span>; }
+<span class="c-sel">*</span> { <span class="c-prop">margin</span>: <span class="c-val">0</span>; }
+<span class="c-sel">body</span> { <span class="c-prop">line-height</span>: <span class="c-val">1.6</span>; }
+<span class="c-sel">img</span> { <span class="c-prop">max-width</span>: <span class="c-val">100%</span>; }</pre>
+              <p class="u-mt-4 u-muted">A <strong>reset</strong> zeroes out all default styles. <strong>Normalize</strong> preserves sensible defaults and corrects browser inconsistencies. Pick one — this page uses a tiny reset.</p>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">BEM naming</h3></header>
+              <pre class="code"><span class="c-sel">.card</span>           <span class="c-com">/* Block */</span>
+<span class="c-sel">.card__title</span>    <span class="c-com">/* Element  (double underscore) */</span>
+<span class="c-sel">.card--featured</span> <span class="c-com">/* Modifier (double dash)     */</span></pre>
+              <p class="u-mt-4 u-muted">BEM makes relationships explicit and keeps specificity flat — no nesting wars.</p>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">Utility classes</h3></header>
+              <pre class="code"><span class="c-sel">.u-mt-4</span>  { <span class="c-prop">margin-top</span>: <span class="c-val">var(--space-4)</span>; }
+<span class="c-sel">.u-center</span> { <span class="c-prop">text-align</span>: <span class="c-val">center</span>; }
+<span class="c-sel">.u-muted</span>  { <span class="c-prop">color</span>: <span class="c-val">var(--color-text-muted)</span>; }</pre>
+              <p class="u-mt-4 u-muted">Single-purpose helpers compose quickly and avoid repeating yourself. This site uses several (see Section 14 of the stylesheet).</p>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">Component-based CSS</h3></header>
+              <p>Group all rules for a component together — header, body, footer — and let CSS variables drive variants. That is exactly the structure of <code>index.css</code>: tokens → reset → base → layout → components → utilities → responsive.</p>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">File organization</h3></header>
+              <pre class="code">styles/
+ ├─ 01-tokens.css     <span class="c-com">/* variables */</span>
+ ├─ 02-reset.css
+ ├─ 03-base.css       <span class="c-com">/* typography */</span>
+ ├─ 04-layout.css
+ ├─ 05-components.css
+ └─ 06-utilities.css</pre>
+              <p class="u-mt-4 u-muted">Split files by responsibility and concatenate at build time. (This single-file site mimics the same order via comments.)</p>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">Scalable CSS strategies</h3></header>
+              <ul class="demo-marker" style="padding-left:1.5rem;">
+                <li>Keep specificity flat — prefer classes over IDs/tags.</li>
+                <li>Avoid <code>!important</code>; refactor instead.</li>
+                <li>One responsibility per class.</li>
+                <li>Theme with variables, not overrides.</li>
+                <li>Name things by intent, not appearance.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- =================================================================
+           SECTION 9 — ACCESSIBILITY
+           ================================================================= -->
+      <section class="section" id="sec-accessibility" aria-labelledby="sec-a11y-title">
+        <div class="content">
+          <header class="section__head">
+            <span class="section__num">SECTION 09</span>
+            <h2 class="section__title" id="sec-a11y-title">Accessibility</h2>
+            <p class="section__desc">
+              Accessible CSS isn't a feature — it's a baseline. These techniques
+              ensure users of all abilities can perceive and operate your UI.
+            </p>
+          </header>
+
+          <div class="grid grid--2">
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">Visible focus styles</h3></header>
+              <p>Never remove <code>outline</code> without a replacement. Use <code>:focus-visible</code> so keyboard users get a clear ring without bothering mouse users.</p>
+              <pre class="code u-mt-4"><span class="c-sel">a:focus-visible</span> {
+  <span class="c-prop">outline</span>: <span class="c-val">3px solid var(--color-primary)</span>;
+  <span class="c-prop">outline-offset</span>: <span class="c-val">2px</span>;
+}</pre>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">Color contrast</h3></header>
+              <p>Aim for WCAG AA: <strong>4.5:1</strong> for body text, <strong>3:1</strong> for large text and UI components. Never rely on colour alone to convey meaning.</p>
+              <div class="callout callout--tip u-mt-4"><span class="callout__icon">✅</span><div><p class="callout__title">Tools</p>Use browser DevTools contrast checker or the WAVE extension.</p></div></div>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">Keyboard navigation</h3></header>
+              <p>Every interactive element must be reachable via <kbd>Tab</kbd> and operable via <kbd>Enter</kbd>/<kbd>Space</kbd>. Maintain a logical tab order with sensible DOM order.</p>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">Reduced motion</h3></header>
+              <pre class="code"><span class="c-sel">@@media (prefers-reduced-motion: reduce)</span> {
+  <span class="c-sel">*</span> { <span class="c-prop">animation</span>: <span class="c-val">none</span> !important; <span class="c-prop">transition</span>: <span class="c-val">none</span> !important; }
+}</pre>
+              <p class="u-mt-4 u-muted">Vestibular disorders can make motion painful — always respect this preference. This page does.</p>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">Readable typography</h3></header>
+              <ul class="demo-marker" style="padding-left:1.5rem;">
+                <li>Body text ≥ 16px (<code>1rem</code>).</li>
+                <li>Line-height between 1.4 and 1.7.</li>
+                <li>Line length 45–75 characters.</li>
+                <li>Avoid fully justified text for screen readers.</li>
+              </ul>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">ARIA-friendly styling</h3></header>
+              <p>Style based on semantic attributes — <code>[aria-expanded]</code>, <code>[aria-current]</code>, <code>[disabled]</code> — instead of extra classes. This keeps behaviour and appearance in sync.</p>
+              <pre class="code u-mt-4"><span class="c-sel">[aria-expanded="true"] .icon</span> { <span class="c-prop">transform</span>: <span class="c-val">rotate(90deg)</span>; }
+<span class="c-sel">[aria-current="page"]</span> { <span class="c-prop">color</span>: <span class="c-val">var(--color-primary)</span>; }</pre>
+            </article>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- =================================================================
+           SECTION 10 — PERFORMANCE
+           ================================================================= -->
+      <section class="section" id="sec-performance" aria-labelledby="sec-perf-title">
+        <div class="content">
+          <header class="section__head">
+            <span class="section__num">SECTION 10</span>
+            <h2 class="section__title" id="sec-perf-title">Performance</h2>
+            <p class="section__desc">
+              CSS directly affects how fast a page paints and how smoothly it
+              animates. A few habits keep things buttery.
+            </p>
+          </header>
+
+          <div class="grid grid--2">
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">Efficient selectors</h3></header>
+              <p>Modern browsers read selectors right-to-left. Over-deep descendant selectors (<code>.nav ul li a span</code>) cost more than a single class (<code>.nav-link</code>).</p>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">Repaints vs reflows</h3></header>
+              <dl class="defs">
+                <dt>Repaint</dt><dd>Pixel re-draw without layout change (color, background).</dd>
+                <dt>Reflow</dt><dd>Layout recalculated (width, height, position). Far more expensive.</dd>
+              </dl>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">Optimising animations</h3></header>
+              <p>Animate only <code>transform</code> and <code>opacity</code> — they run on the GPU and skip layout/paint. Avoid animating <code>top</code>, <code>left</code>, <code>width</code>, <code>box-shadow</code>.</p>
+              <pre class="code u-mt-4"><span class="c-com">/* ✅ GPU-friendly */</span>
+<span class="c-sel">.card:hover</span> { <span class="c-prop">transform</span>: <span class="c-val">translateY(-4px)</span>; }
+
+<span class="c-com">/* ❌ triggers reflow */</span>
+<span class="c-sel">.card:hover</span> { <span class="c-prop">top</span>: <span class="c-val">-4px</span>; }</pre>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">Reducing CSS size</h3></header>
+              <ul class="demo-marker" style="padding-left:1.5rem;">
+                <li>Use CSS variables to avoid repeating values.</li>
+                <li>Delete unused selectors and dead code.</li>
+                <li>Minify for production.</li>
+                <li>Prefer shorthand properties.</li>
+              </ul>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">contain &amp; content-visibility</h3></header>
+              <pre class="code"><span class="c-sel">.card</span> { <span class="c-prop">contain</span>: <span class="c-val">layout paint style</span>; }
+<span class="c-sel">.feed-item</span> { <span class="c-prop">content-visibility</span>: <span class="c-val">auto</span>; }</pre>
+              <p class="u-mt-4 u-muted">Tell the browser an element is independent so it can skip work outside the viewport — huge wins on long lists.</p>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">Reusable classes</h3></header>
+              <p>Composition beats duplication. Build small, single-purpose classes and compose them — fewer lines, fewer repaints, easier maintenance.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- =================================================================
+           SECTION 11 — BEST PRACTICES
+           ================================================================= -->
+      <section class="section" id="sec-best-practices" aria-labelledby="sec-bp-title">
+        <div class="content">
+          <header class="section__head">
+            <span class="section__num">SECTION 11</span>
+            <h2 class="section__title" id="sec-bp-title">Best Practices</h2>
+            <p class="section__desc">
+              The habits that separate hobbyist CSS from professional CSS.
+            </p>
+          </header>
+
+          <div class="grid grid--2">
+            <article class="card">
+              <h4>📝 Comment generously</h4>
+              <p class="u-mt-2">Mark sections, explain non-obvious hacks, and document token meanings. Future-you will thank you.</p>
+            </article>
+            <article class="card">
+              <h4>🏷️ Consistent naming</h4>
+              <p class="u-mt-2">Pick a convention (BEM, utility-first, suits your team) and stick to it. This page mixes BEM blocks with <code>u-</code> utilities.</p>
+            </article>
+            <article class="card">
+              <h4>♻️ Build reusable components</h4>
+              <p class="u-mt-2">If you've written it twice, extract it. Variants via modifiers or tokens, not copy-paste.</p>
+            </article>
+            <article class="card">
+              <h4>🧩 Maintainability</h4>
+              <p class="u-mt-2">Flat specificity, no <code>!important</code>, variables for theming. Keep the cascade your friend.</p>
+            </article>
+            <article class="card">
+              <h4>📱 Responsive-first</h4>
+              <p class="u-mt-2">Start mobile, enhance upward. Use <code>clamp()</code> and <code>min()</code>/<code>max()</code> to replace many media queries.</p>
+            </article>
+            <article class="card">
+              <h4>🌐 Cross-browser testing</h4>
+              <p class="u-mt-2">Test on real devices. Use feature queries (<code>@@supports</code>) and provide graceful fallbacks.</p>
+            </article>
+            <article class="card">
+              <h4>🎨 Tokenise everything</h4>
+              <p class="u-mt-2">Colors, spacing, radii, shadows and motion should all be variables. Brand changes become one edit.</p>
+            </article>
+            <article class="card">
+              <h4>⚖️ Use <code>!important</code> sparingly</h4>
+              <p class="u-mt-2">It breaks the cascade. If you need it, your specificity strategy is wrong — refactor.</p>
+            </article>
+          </div>
+
+          <div class="callout callout--tip u-mt-4">
+            <span class="callout__icon">⭐</span>
+            <div>
+              <p class="callout__title">The golden rule</p>
+              Write CSS for the next developer who will read it — not for the computer. Clarity beats cleverness.
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- =================================================================
+           SECTION 12 — MINI PROJECTS
+           ================================================================= -->
+      <section class="section" id="sec-projects" aria-labelledby="sec-projects-title">
+        <div class="content">
+          <header class="section__head">
+            <span class="section__num">SECTION 12</span>
+            <h2 class="section__title" id="sec-projects-title">Mini Projects</h2>
+            <p class="section__desc">
+              Twelve real interface components — every one built with HTML and CSS
+              only. No JavaScript anywhere.
+            </p>
+          </header>
+
+          <!-- Pricing cards -->
+          <article class="lesson">
+            <header class="lesson__head"><h3 class="lesson__title">1 · Pricing cards</h3></header>
+            <div class="pricing">
+              <div class="price-card">
+                <h4>Starter</h4>
+                <p class="amount">$0 <span>/mo</span></p>
+                <ul><li>1 project</li><li>Community support</li><li>1 GB storage</li></ul>
+                <a class="btn btn--ghost" href="#sec-projects">Choose</a>
+              </div>
+              <div class="price-card price-card--featured">
+                <span class="price-card__tag">Most popular</span>
+                <h4>Pro</h4>
+                <p class="amount">$19 <span>/mo</span></p>
+                <ul><li>Unlimited projects</li><li>Priority support</li><li>100 GB storage</li><li>Custom domains</li></ul>
+                <a class="btn btn--primary" href="#sec-projects">Choose</a>
+              </div>
+              <div class="price-card">
+                <h4>Team</h4>
+                <p class="amount">$49 <span>/mo</span></p>
+                <ul><li>Everything in Pro</li><li>5 seats</li><li>SSO &amp; SAML</li></ul>
+                <a class="btn btn--ghost" href="#sec-projects">Choose</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Timeline -->
+          <article class="lesson">
+            <header class="lesson__head"><h3 class="lesson__title">2 · Timeline</h3></header>
+            <div class="timeline">
+              <div class="timeline__item">
+                <p class="timeline__year">1996</p>
+                <p class="timeline__title">CSS1</p>
+                <p class="timeline__text">First official CSS spec — basic styling for fonts, colours, alignment.</p>
+              </div>
+              <div class="timeline__item">
+                <p class="timeline__year">2011</p>
+                <p class="timeline__title">CSS3 modules</p>
+                <p class="timeline__text">Modular specs: selectors, media queries, borders, backgrounds.</p>
+              </div>
+              <div class="timeline__item">
+                <p class="timeline__year">2017</p>
+                <p class="timeline__title">Grid &amp; Flexbox</p>
+                <p class="timeline__text">True two-dimensional and one-dimensional layout systems arrive.</p>
+              </div>
+              <div class="timeline__item">
+                <p class="timeline__year">2023</p>
+                <p class="timeline__title">:has() &amp; nesting</p>
+                <p class="timeline__text">The parent selector and native nesting ship to all major browsers.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Accordion -->
+          <article class="lesson">
+            <header class="lesson__head"><h3 class="lesson__title">3 · Accordion (no JS)</h3></header>
+            <div class="accordion">
+              <details class="acc-item" open>
+                <summary>What is this built with?</summary>
+                <p>100% HTML5 and CSS3 — using the native <code>&lt;details&gt;</code>/<code>&lt;summary&gt;</code> elements. No JavaScript required.</p>
+              </details>
+              <details class="acc-item">
+                <summary>Is it accessible?</summary>
+                <p>Yes — the browser handles keyboard interaction, ARIA roles and focus for free.</p>
+              </details>
+              <details class="acc-item">
+                <summary>Can I customise the icon?</summary>
+                <p>Absolutely. Hide the default marker with <code>list-style: none</code> and add your own <code>::after</code>.</p>
+              </details>
+            </div>
+          </article>
+
+          <!-- Tooltip -->
+          <article class="lesson">
+            <header class="lesson__head"><h3 class="lesson__title">4 · Tooltip (pure CSS)</h3></header>
+            <div class="demo">
+              Hover or focus:
+              <a class="tooltip btn btn--primary" href="#sec-projects" data-tip="Pure CSS tooltip!" tabindex="0">Hover me</a>
+            </div>
+          </article>
+
+          <!-- Tabs -->
+          <article class="lesson">
+            <header class="lesson__head"><h3 class="lesson__title">5 · Tabs (radio-button hack)</h3></header>
+            <div class="tabs">
+              <input class="tabs__input" type="radio" name="tabs-demo" id="tab1" checked>
+              <input class="tabs__input" type="radio" name="tabs-demo" id="tab2">
+              <input class="tabs__input" type="radio" name="tabs-demo" id="tab3">
+              <div class="tabs__labels">
+                <label class="tabs__label" for="tab1">Overview</label>
+                <label class="tabs__label" for="tab2">Features</label>
+                <label class="tabs__label" for="tab3">Pricing</label>
+              </div>
+              <div class="tabs__panels">
+                <div class="tabs__panel" id="panel1"><strong>Overview.</strong> Three hidden radio inputs drive three sibling panels. The <code>:checked</code> pseudo-class toggles which panel displays.</div>
+                <div class="tabs__panel" id="panel2"><strong>Features.</strong> Each label is linked to its radio by <code>for</code>/. Clicking a label selects the input — and CSS does the rest.</div>
+                <div class="tabs__panel" id="panel3"><strong>Pricing.</strong> Because labels are real form controls, the tabs are keyboard-accessible out of the box.</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Profile + Testimonial + Feature -->
+          <div class="grid grid--3">
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">6 · Profile card</h3></header>
+              <div class="profile" style="margin-inline:auto;">
+                <div class="profile__avatar">JD</div>
+                <p class="profile__name">Jane Designer</p>
+                <p class="profile__role">Lead Frontend Engineer</p>
+                <p class="profile__bio">Building delightful interfaces with semantic HTML and modern CSS since 2014.</p>
+                <a class="btn btn--primary" href="#sec-projects">Follow</a>
+              </div>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">7 · Testimonial</h3></header>
+              <div class="testimonial">
+                <p>"The cleanest CSS course I've ever seen. Every concept is explained, demonstrated and shipped in pure CSS."</p>
+                <div class="testimonial__author">
+                  <div class="testimonial__avatar">AK</div>
+                  <div><strong>Alex Kim</strong><span>Senior Developer · Acme</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">8 · Feature card</h3></header>
+              <div class="feature">
+                <div class="feature__icon">🚀</div>
+                <h4>Lightning fast</h4>
+                <p>Zero JavaScript. The whole interactive page weighs in at two files and runs anywhere.</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Responsive gallery -->
+          <article class="lesson">
+            <header class="lesson__head"><h3 class="lesson__title">9 · Responsive gallery</h3></header>
+            <div class="gallery">
+              <div class="gallery__item">01</div>
+              <div class="gallery__item">02</div>
+              <div class="gallery__item">03</div>
+              <div class="gallery__item">04</div>
+              <div class="gallery__item">05</div>
+              <div class="gallery__item">06</div>
+            </div>
+            <p class="u-mt-2 u-muted">Uses <code>grid-template-columns: repeat(auto-fit, minmax(140px, 1fr))</code> — reflows automatically on any screen.</p>
+          </article>
+
+          <!-- Hero + Footer mini -->
+          <div class="grid grid--2">
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">10 · Mini hero</h3></header>
+              <div class="mini-hero">
+                <h3>Ship better interfaces</h3>
+                <p>Master modern CSS, one concept at a time.</p>
+                <a class="btn btn--ghost" href="#sec-projects">Get started</a>
+              </div>
+            </article>
+            <article class="lesson">
+              <header class="lesson__head"><h3 class="lesson__title">11 · Mini footer</h3></header>
+              <div class="mini-footer">
+                <strong style="color:#fff;display:block;font-size:1.1rem;">CSS Advanced Explorer</strong>
+                <p style="margin:.5rem 0 1rem;">An open educational resource for CSS learners.</p>
+                <p>© 2026 · Made for CSS Learners</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Responsive nav (summary; built with checkbox hack) -->
+          <article class="lesson">
+            <header class="lesson__head"><h3 class="lesson__title">12 · Responsive navigation</h3></header>
+            <p>The header at the top of this page <em>is</em> the demo. On wide screens it shows inline links; below 1024px the hamburger toggle appears. The toggle is a hidden checkbox styled with <code>:checked ~</code> — pure CSS, no JavaScript. Resize your window to see it.</p>
+            <pre class="code"><span class="c-tag">&lt;input</span> <span class="c-attr">type</span>=<span class="c-str">"checkbox"</span> <span class="c-attr">id</span>=<span class="c-str">"nav-toggle"</span> <span class="c-attr">class</span>=<span class="c-str">"nav-toggle"</span><span class="c-tag">&gt;</span>
+<span class="c-tag">&lt;label</span> <span class="c-attr">for</span>=<span class="c-str">"nav-toggle"</span><span class="c-tag">&gt;</span>☰<span class="c-tag">&lt;/label&gt;</span>
+<span class="c-tag">&lt;nav</span> <span class="c-attr">class</span>=<span class="c-str">"sidebar"</span><span class="c-tag">&gt;</span>…<span class="c-tag">&lt;/nav&gt;</span></pre>
+            <pre class="code u-mt-4"><span class="c-sel">.nav-toggle:checked ~ .page .sidebar</span> { <span class="c-prop">transform</span>: <span class="c-val">translateX(0)</span>; }</pre>
+          </article>
+        </div>
+      </section>
+
+
+      <!-- =================================================================
+           SECTION 13 — PRACTICE CHALLENGES
+           ================================================================= -->
+      <section class="section" id="sec-challenges" aria-labelledby="sec-ch-title">
+        <div class="content">
+          <header class="section__head">
+            <span class="section__num">SECTION 13</span>
+            <h2 class="section__title" id="sec-ch-title">Practice Challenges</h2>
+            <p class="section__desc">
+              Try each problem, then compare with the provided solution. Every
+              challenge maps to a concept taught earlier in the guide.
+            </p>
+          </header>
+
+          <div class="grid">
+
+            <article class="challenge">
+              <header class="challenge__head">
+                <span class="challenge__num">1</span>
+                <h4>Zebra-striped table</h4>
+              </header>
+              <div class="challenge__body">
+                <p class="challenge__goal">🎯 Alternate the background of every odd row in a table — without adding classes to the HTML.</p>
+                <p><strong>Expected:</strong> rows 1, 3, 5… tinted.</p>
+                <pre class="code"><span class="c-sel">tbody tr:nth-child(odd)</span> { <span class="c-prop">background</span>: <span class="c-val">var(--color-surface-soft)</span>; }</pre>
+              </div>
+            </article>
+
+            <article class="challenge">
+              <header class="challenge__head">
+                <span class="challenge__num">2</span>
+                <h4>Custom checkbox</h4>
+              </header>
+              <div class="challenge__body">
+                <p class="challenge__goal">🎯 Replace the native checkbox with a coloured box and a ✓ tick — using only <code>:checked</code> and <code>::after</code>.</p>
+                <pre class="code"><span class="c-sel">input</span> { <span class="c-prop">appearance</span>: <span class="c-val">none</span>; <span class="c-prop">width</span>: <span class="c-val">22px</span>; <span class="c-prop">height</span>: <span class="c-val">22px</span>; }
+<span class="c-sel">input:checked</span> { <span class="c-prop">background</span>: <span class="c-val">var(--color-primary)</span>; }
+<span class="c-sel">input:checked::after</span> { <span class="c-prop">content</span>: <span class="c-str">"✓"</span>; <span class="c-prop">color</span>: <span class="c-val">#fff</span>; }</pre>
+              </div>
+            </article>
+
+            <article class="challenge">
+              <header class="challenge__head">
+                <span class="challenge__num">3</span>
+                <h4>Fluid heading</h4>
+              </header>
+              <div class="challenge__body">
+                <p class="challenge__goal">🎯 Make a heading scale smoothly from 1.5rem to 3rem based on viewport width — without media queries.</p>
+                <pre class="code"><span class="c-sel">h1</span> { <span class="c-prop">font-size</span>: <span class="c-val">clamp(1.5rem, 4vw + 1rem, 3rem)</span>; }</pre>
+              </div>
+            </article>
+
+            <article class="challenge">
+              <header class="challenge__head">
+                <span class="challenge__num">4</span>
+                <h4>CSS-only tooltip</h4>
+              </header>
+              <div class="challenge__body">
+                <p class="challenge__goal">🎯 Show a tooltip above a link on hover, reading its text from a <code>data-tip</code> attribute.</p>
+                <pre class="code"><span class="c-sel">[data-tip]:hover::before</span> {
+  <span class="c-prop">content</span>: <span class="c-val">attr(data-tip)</span>;
+  <span class="c-prop">position</span>: <span class="c-val">absolute</span>;
+  <span class="c-prop">background</span>: <span class="c-val">#000</span>; <span class="c-prop">color</span>: <span class="c-val">#fff</span>;
+}</pre>
+              </div>
+            </article>
+
+            <article class="challenge">
+              <header class="challenge__head">
+                <span class="challenge__num">5</span>
+                <h4>Dark-mode toggle via variables</h4>
+              </header>
+              <div class="challenge__body">
+                <p class="challenge__goal">🎯 Switch the entire colour scheme when the OS is in dark mode — by changing only tokens.</p>
+                <pre class="code"><span class="c-sel">@@media (prefers-color-scheme: dark)</span> {
+  <span class="c-sel">:root</span> {
+    <span class="c-prop">--color-bg</span>: <span class="c-val">#0a1020</span>;
+    <span class="c-prop">--color-text</span>: <span class="c-val">#e6ecf5</span>;
+  }
+}</pre>
+              </div>
+            </article>
+
+            <article class="challenge">
+              <header class="challenge__head">
+                <span class="challenge__num">6</span>
+                <h4>Equal-height card grid</h4>
+              </header>
+              <div class="challenge__body">
+                <p class="challenge__goal">🎯 Three cards in a row that stay equal height regardless of content, and reflow to 1 column on mobile.</p>
+                <pre class="code"><span class="c-sel">.grid</span> {
+  <span class="c-prop">display</span>: <span class="c-val">grid</span>;
+  <span class="c-prop">grid-template-columns</span>: <span class="c-val">repeat(auto-fit, minmax(240px, 1fr))</span>;
+}</pre>
+              </div>
+            </article>
+
+            <article class="challenge">
+              <header class="challenge__head">
+                <span class="challenge__num">7</span>
+                <h4>Sticky header</h4>
+              </header>
+              <div class="challenge__body">
+                <p class="challenge__goal">🎯 Keep the site header visible while scrolling, without overlapping anchored content.</p>
+                <pre class="code"><span class="c-sel">.header</span> { <span class="c-prop">position</span>: <span class="c-val">sticky</span>; <span class="c-prop">top</span>: <span class="c-val">0</span>; <span class="c-prop">z-index</span>: <span class="c-val">100</span>; }
+<span class="c-sel">:target</span> { <span class="c-prop">scroll-margin-top</span>: <span class="c-val">80px</span>; }</pre>
+              </div>
+            </article>
+
+            <article class="challenge">
+              <header class="challenge__head">
+                <span class="challenge__num">8</span>
+                <h4>Hover-lift card</h4>
+              </header>
+              <div class="challenge__body">
+                <p class="challenge__goal">🎯 On hover, lift the card 4px with a smooth shadow — using only GPU-friendly properties.</p>
+                <pre class="code"><span class="c-sel">.card</span> { <span class="c-prop">transition</span>: <span class="c-val">transform .2s ease, box-shadow .2s ease</span>; }
+<span class="c-sel">.card:hover</span> {
+  <span class="c-prop">transform</span>: <span class="c-val">translateY(-4px)</span>;
+  <span class="c-prop">box-shadow</span>: <span class="c-val">var(--shadow-lg)</span>;
+}</pre>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+
+    <!-- =================================================================
+         FOOTER
+         ================================================================= -->
+    <footer class="footer page__footer">
+      <div class="footer__inner">
+        <div>
+          <p class="footer__brand">CSS Advanced Explorer</p>
+          <p class="footer__desc">
+            A complete, framework-free educational resource for mastering
+            modern CSS3. Built entirely with semantic HTML5 and CSS3 — no
+            JavaScript, no libraries, no build step.
+          </p>
+        </div>
+        <div>
+          <h5>Learn</h5>
+          <ul>
+            <li><a href="#sec-pseudo-classes">Pseudo-classes</a></li>
+            <li><a href="#sec-pseudo-elements">Pseudo-elements</a></li>
+            <li><a href="#sec-variables">CSS Variables</a></li>
+            <li><a href="#sec-functions">Functions</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Apply</h5>
+          <ul>
+            <li><a href="#sec-modern">Modern features</a></li>
+            <li><a href="#sec-projects">Mini projects</a></li>
+            <li><a href="#sec-challenges">Challenges</a></li>
+            <li><a href="#sec-best-practices">Best practices</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 CSS Advanced Explorer · Made for CSS Learners</span>
+        <span>Built with HTML5 + CSS3 · Zero JavaScript</span>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
